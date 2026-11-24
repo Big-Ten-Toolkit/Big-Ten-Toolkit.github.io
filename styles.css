@@ -1,0 +1,187 @@
+/* Base styles */
+:root {
+  color-scheme: light;
+  --ink: #202a36;
+  --muted: #526171;
+  --brand: #5b2a6f;
+  --brand-dark: #3e1c4d;
+  --surface: #ffffff;
+  --page: #f5f6f8;
+  --border: #e2e6eb;
+  --link: #4d2862;
+  --link-hover: #2f173d;
+  --content-width:  min(100% - 2rem, 760px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.container {
+  width: var(--content-width);
+  margin-inline: auto;
+}
+
+.site-header {
+  padding: clamp(3rem, 8vw, 5.5rem) 0 3.25rem;
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+  color: #fff;
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  color: #eadcf0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  max-width: 15ch;
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+}
+
+h2 {
+  margin: 0 0 1.1rem;
+  font-size: clamp(1.45rem, 3vw, 1.8rem);
+}
+
+main {
+  padding-block: 2.5rem 4rem;
+}
+
+.intro,
+.content-section {
+  margin-bottom: 1.5rem;
+  padding: clamp(1.35rem, 4vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 5px 18px rgb(24 34 48 / 4%);
+}
+
+.intro p {
+  max-width: 68ch;
+  margin: 0;
+  color: var(--muted);
+}
+
+.intro p + p {
+  margin-top: 1rem;
+  color: var(--ink);
+}
+
+.content-section > :last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 1.35rem;
+}
+
+.resource-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.resource-list li,
+.wishlist li {
+  padding-left: 0.2rem;
+}
+
+.resource-note {
+  color: var(--muted);
+}
+
+a {
+  color: var(--link);
+  font-weight: 650;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  border-radius: 3px;
+  outline: 3px solid #e0b7f0;
+  outline-offset: 3px;
+}
+
+.wishlist p {
+  margin-top: 0;
+}
+
+.wishlist ul {
+  margin-bottom: 0;
+}
+
+.site-footer {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  background: #eef0f3;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    padding-block: 2.75rem 2.5rem;
+  }
+
+  main {
+    padding-block: 1.25rem 2.5rem;
+  }
+
+  .intro,
+  .content-section {
+    border-radius: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
